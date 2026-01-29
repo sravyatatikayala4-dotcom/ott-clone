@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Video Clone</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#0f171e;color:white}
+
+/* Sidebar */
+.sidebar{
+  position:fixed;
+  width:220px;
+  height:100%;
+  background:#00050d;
+  padding:20px 0;
+}
+.sidebar img{width:120px;display:block;margin:0 auto 20px}
+.nav-links li{list-style:none}
+.nav-links a{
+  display:block;
+  padding:14px 25px;
+  color:#fff;
+  text-decoration:none;
+}
+.nav-links a:hover{background:#1a242f}
+
+/* Main */
+.main-content{margin-left:220px;padding:20px}
+
+/* Hero */
+.hero{
+  height:420px;
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+}
+.hero video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero-text{
+  position:absolute;
+  bottom:30px;
+  left:30px;
+}
+.hero-text h1{font-size:38px}
+
+/* Sections */
+.section h2{margin:30px 0 15px}
+.cards{display:flex;gap:20px;flex-wrap:wrap}
+.card{width:180px}
+.card img{
+  width:100%;
+  height:260px;
+  border-radius:10px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:.3s;
+}
+.card img:hover{transform:scale(1.05)}
+.card h3{font-size:14px;margin-top:8px}
+
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.modal video,.modal iframe{
+  width:80%;
+  height:80%;
+}
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:35px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png">
+<ul class="nav-links">
+<li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="#movies"><i class="fas fa-film"></i> Movies</a></li>
+<li><a href="#tvshows"><i class="fas fa-tv"></i> TV Shows</a></li>
+<li><a href="#sports"><i class="fas fa-futbol"></i> Sports</a></li>
+</ul>
+</aside>
+
+<main class="main-content">
+
+<!-- HERO -->
+<section class="hero" id="home">
+<video autoplay muted loop playsinline>
+<source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4">
+</video>
+<div class="hero-text">
+<h1>Watch the Latest Blockbusters</h1>
+<p>Only on Prime Video</p>
+</div>
+</section>
+
+<!-- MOVIES -->
+<section class="section" id="movies">
+<h2>Popular Movies</h2>
+<div class="cards">
+    <section class="section" id="movies">
+<h2>Movies</h2>
+<div class="cards">
+    <div class="card">
+        <img src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+        onclick="playVideo('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4')">
+        <h3>Big Buck Bunny</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg"
+        onclick="playVideo('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4')">
+        <h3>Elephants Dream</h3>
+    </div>
+
+
+<div class="card">
+<img src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg"
+onclick="playVideo('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4')">
+<h3>Sintel</h3>
+</div>
+
+</div>
+</section>
+
+<!-- TV SHOWS -->
+<section class="section" id="tvshows">
+<h2>TV Shows</h2>
+<div class="cards">
+    <section class="section" id="tvshows">
+<h2>TV Shows</h2>
+
+<div class="cards">
+
+    <!-- Mirzapur -->
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/ZNeGF-PvRHY/maxresdefault.jpg"
+        onclick="playVideo('https://www.youtube.com/embed/ZNeGF-PvRHY')">
+        <h3>Mirzapur</h3>
+    </div>
+
+    <!-- The Family Man -->
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/XatRGut65VI/maxresdefault.jpg"
+        onclick="playVideo('https://www.youtube.com/embed/XatRGut65VI')">
+        <h3>The Family Man</h3>
+    </div>
+
+    <!-- Money Heist -->
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/_InqQJRqGW4/maxresdefault.jpg"
+        onclick="playVideo('https://www.youtube.com/embed/_InqQJRqGW4')">
+        <h3>Money Heist</h3>
+    </div>
+
+    <!-- Scam 1992 -->
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/ISORfez27og/maxresdefault.jpg"
+        onclick="playVideo('https://www.youtube.com/embed/ISORfez27og')">
+        <h3>Scam 1992</h3>
+    </div>
+
+<div class="card">
+    <img src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg" alt="Demo Show 1"
+    onclick="playVideo('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4')">
+    <h3>Demo TV Show 1</h3>
+</div>
+
+
+    <!-- Farzi -->
+    <div class="card">
+        <img src="https://i.ytimg.com/vi/rcQ_xZdzPBc/maxresdefault.jpg"
+        onclick="playVideo('https://www.youtube.com/embed/rcQ_xZdzPBc')">
+        <h3>Farzi</h3>
+    </div>
+
+
+</div>
+</section>
+
+
+<!-- SPORTS -->
+<section class="section" id="sports">
+<h2>Sports</h2>
+<div class="cards">
+    <div class="card">
+    <img src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+    onclick="playVideo('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4')">
+    <h3>Cricket Highlights</h3>
+</div>
+
+</div>
+</section>
+
+<!-- SPORTS -->
+<section class="section" id="sports">
+<h2>Sports</h2>
+<div class="cards">
+
+<div class="card">
+<img src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+onclick="playVideo('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4')">
+<h3>Car Racing</h3>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<!-- MODAL -->
+<div class="modal" id="videoModal">
+<span class="close" onclick="closeModal()">&times;</span>
+<video id="modalVideo" controls></video>
+<iframe id="ytFrame" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+
+<script>
+function playVideo(link){
+const modal=document.getElementById("videoModal");
+const video=document.getElementById("modalVideo");
+const iframe=document.getElementById("ytFrame");
+
+modal.style.display="flex";
+
+if(link.includes("youtube")){
+video.pause();
+video.style.display="none";
+iframe.style.display="block";
+iframe.src=link+"?autoplay=1";
+}else{
+iframe.src="";
+iframe.style.display="none";
+video.style.display="block";
+video.src=link;
+video.play();
+}
+}
+
+function closeModal(){
+document.getElementById("videoModal").style.display="none";
+document.getElementById("modalVideo").pause();
+document.getElementById("modalVideo").src="";
+document.getElementById("ytFrame").src="";
+}
+</script>
+
+</body>
+</html>
